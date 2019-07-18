@@ -13,7 +13,7 @@ class Juego {
 
   inicializar() {
     btnEmpezar.classList.add('hide')
-    this.nivel = 7
+    this.nivel = 1
     this.colores = {
         celeste,
         violeta,
