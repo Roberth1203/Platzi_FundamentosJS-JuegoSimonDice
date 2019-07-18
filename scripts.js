@@ -12,6 +12,11 @@ class Juego {
   }
 
   inicializar() {
+      /*
+          el metodo bind se utiliza para asignar el contexto a tratar
+          en este caso para seguir manteniendo la clase Juego
+      */
+    this.elegirColor = this.elegirColor.bind(this)
     btnEmpezar.classList.add('hide')
     this.nivel = 1
     this.colores = {
@@ -28,6 +33,7 @@ class Juego {
 
   siguienteNivel() {
       this.iluminarSecuencia()
+      this.agregarEventosClick()
   }
 
   transformarNumeroAColor(num) {
@@ -59,6 +65,21 @@ class Juego {
   apagarColor(color) {
       this.colores[color].classList.remove('light')
   }
+
+  agregarEventosClick() {
+      this.colores.celeste.addEventListener('click', this.elegirColor)
+
+      this.colores.celeste.addEventListener('click', this.elegirColor)
+
+      this.colores.celeste.addEventListener('click', this.elegirColor)
+
+      this.colores.celeste.addEventListener('click', this.elegirColor)
+  }
+
+  elegirColor(ev) {
+      console.log(this)
+  }
+
 }
 
 function empezarJuego() {
